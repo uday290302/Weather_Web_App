@@ -1,10 +1,17 @@
+const dotenv = require("dotenv");
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const ejslayouts = require("express-ejs-layouts");
 const app = express();
 const path = require('path')
+// dotenv.config({path: '.env'})
 
+
+dotenv.config(path.join(__dirname,'.env'))
+
+const PORT = process.env.PORT
 app.use(express.static('public'))
 // app.use(ejslayouts)
 
@@ -61,6 +68,6 @@ res.render('result',{temp :temp,desc:description,cityname:city,imageurl:imageurl
 
 
 
-app.listen(1000,()=>{
-    console.log("listening:1000");
+app.listen(PORT,()=>{
+    console.log(`listening:${PORT}`);
 });
