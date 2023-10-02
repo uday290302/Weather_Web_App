@@ -2,7 +2,7 @@
   "name": "weatherproj",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "run":"node server.js"
   },
